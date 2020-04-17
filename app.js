@@ -63,7 +63,7 @@ app.post("/upload", (req, res, next) => {
   const music = new MusicPlayer(title, musicPath);
   music.save(() => {
     console.log("song added..!");
-    res.redirect("/");
+    res.redirect("/"); 
   });
 });
 app.post("/delete", (req, res, next) => {
