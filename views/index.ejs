@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/images/audio.png">
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Music-Player</title>
+  </head>
+  <body>
+    <header id="main-header">
+      <div class="main-header-content">
+        <h1>Music Player</h1>
+      </div>
+    </header>
+
+    <section id="music-player-form">
+      <div class="form-wraper">
+        <h3 style="text-align: center; color: #555;">Upload Music File Here</h3>
+
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="song-name">Song Name</label>
+            <input type="text" id="song-name" name="songName" />
+          </div>
+          <div class="form-group">
+            <label for="music-file">Music File</label>
+            <input type="file" id="music-file" name="musicFile" />
+          </div>
+          <button type="submit" class="btn">Upload</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="music-player" style="min-height: 80vh;">
+      <h2 style="text-align: center;">Your Music List</h2>
+      <ul>
+        <% if(songs.length>0) {%> <% for(song of songs) { %>
+        <li>
+          <h3><%= song.title%></h3>
+          <audio controls src="<%= song.path %>">
+            Your browser does not support the
+            <code>audio</code> element.
+          </audio>
+          <form action="/delete" method="POST" class="delete-container">
+            <input type="hidden" value="<%= song.id %>" name="id" />
+            <input type="hidden" value="<%= song.path %>" name="songPath" />
+            <button type="submit" class="btn btn-delete">Delete</button>
+          </form>
+        </li>
+        <% } %> <% }else { %>
+        <div style="height: 50vh; text-align: center;">
+          No songs
+        </div>
+        <% } %>
+      </ul>
+    </section>
+  </body>
+</html>

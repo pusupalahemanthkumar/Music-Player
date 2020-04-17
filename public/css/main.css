@@ -1,0 +1,122 @@
+/* Importing Font Here. */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/* CSS Resets Here. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Main Styling Here */
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.7rem;
+  background: url("../images/bg-header.jpg")
+  no-repeat center center/cover;;
+}
+h1{
+    margin: 1rem 0;
+}
+p{
+    margin: 0.5rem 0;;
+}
+.btn{
+    display: inline-block;
+    border: none;
+    padding: 0.2rem 1rem;
+    border-radius: 5px;
+    background:#333;
+    cursor: pointer;
+    color:#fff;
+    width:100%;
+    transition: 1s all ease-in-out;
+}
+.btn:hover{
+    background: #555;
+}
+.btn-delete{
+    margin: 1rem auto;
+    padding: 0.75rem;
+    width:auto;
+    color:#333;
+    background: #f4f4f4;
+    transition: 1s all ease-in-out;
+}
+/* .btn-delete:hover{
+    background: #fff;
+} */
+.delete-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header h1{
+    color: #fff;
+    text-align: center;
+}
+
+#music-player-form .form-wraper {
+    max-width: 90%;
+    margin: 1rem auto;
+    padding: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height:100%;
+}
+#music-player-form .form-wraper h1{
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+#music-player-form .form-wraper .form-group{
+    width:100%;
+    margin-bottom: 0.5rem;
+}
+#music-player-form .form-wraper .form-group label{
+    display: block;
+    margin-bottom:0.2rem 0;
+}
+
+#music-player-form .form-wraper .form-group input{
+    width: 100%;
+    padding: 0.15rem;
+    background-color: #f4f4f4;
+}
+#music-player-form .form-wraper .form-group input[type="file"]{
+    background-color: #f4f4f4;
+}
+#music-player{
+    max-width: 90%;
+    margin: 1rem auto;
+    padding: 1rem;
+    color: #fff;
+}
+#music-player ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+#music-player ul li{
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-bottom: 1px dotted #ccc;
+}
+#music-player ul li audio{
+    width:100%;
+    margin-top: 0.5rem;
+    border:none;
+}
+
+
+
+@media (max-width:768px){
+    #main-header .main-header-content h1{
+        font-size: 2rem;
+    }
+
+}
